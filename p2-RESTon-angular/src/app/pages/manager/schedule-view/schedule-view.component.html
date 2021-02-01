@@ -1,6 +1,6 @@
 <button class="button post-button" (click)="viewModals('a')">Post a new shift</button>
 <rev-schedule-calander [schedule]="currentSchedule" *ngIf="currentSchedule; else elseBlock"></rev-schedule-calander>
-<ng-template #elseBlock> blah </ng-template>
+<ng-template #elseBlock> Loading Shifts... </ng-template>
 
 <rev-modal *ngIf="viewModal" (closeModal)="viewModals('')" [ngSwitch]="viewModal">
   <rev-new-shift *ngSwitchCase="'a'" [date]="date" [schedule]="currentSchedule"></rev-new-shift>
