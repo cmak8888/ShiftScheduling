@@ -14,10 +14,14 @@ export class ManagerGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    // let isManager = this.authService.loggedInIsManager();
-    let isManager = this.authService.isLoggedIn();
-    if(!isManager) {
+    let isLoggedIn = this.authService.isLoggedIn();
+    let isManager = this.authService.loggedInIsManager();
+    if(!isLoggedIn) {
       this.router.navigate(['login']);
+      return true;
+    }
+    if(!isManager) {
+      this.router.navigate(['employee'])
     }
     return isManager;
   }
