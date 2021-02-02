@@ -118,7 +118,7 @@ export class ScheduleService {
       }
       this.sheduleAPIService.post(schedule)
       .then(e => {
-        this.schedules.next(this.schedules.getValue().concat(schedule));
+        this.schedules.next(this.schedules.getValue().concat(e));
         resolve("Successfully created a new Schedule!");
       })
       .catch(error => {
