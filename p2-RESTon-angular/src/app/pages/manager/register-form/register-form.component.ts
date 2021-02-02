@@ -17,6 +17,7 @@ export class RegisterFormComponent implements OnInit {
   validEmail: boolean = false;
   error: string = '';
   pending:boolean = false;
+  success:boolean = false;
 
 
   constructor(private fb: FormBuilder, private authService: AuthService, private mailboxService: EmailValidationService) { }
@@ -99,12 +100,12 @@ export class RegisterFormComponent implements OnInit {
       console.log(validation.smtp_check);
 
       if(this.validEmail){
-        console.log(this.validEmail + 'inside the if')
-        console.log(this.user.email);
         this.authService.register(this.user)
         .then(response => {
           console.log(response);
           this.pending = false;
+          this.success = true;
+          form.reset();
           return this.validEmail = false;
         }).catch(
           errorMessage => {
@@ -121,12 +122,6 @@ export class RegisterFormComponent implements OnInit {
         return this.validEmail = true;
       }
     });
-
-    // console.log(this.validEmail.smtp_check);
-    // console.log('Your form data : ', form.value);
-    // console.log("this is the user data: ", this.user)
-    // console.log("submitted");
-
 
   }
 
