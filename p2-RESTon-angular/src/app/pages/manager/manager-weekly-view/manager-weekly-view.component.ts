@@ -21,8 +21,8 @@ export class ManagerWeeklyViewComponent implements OnInit {
 
   postSchedule(): void {
     this.scheduleService.postSchedule()
-    .then(e => this.error = "")
-    .catch(e => this.error = e);
+    .then(e => this.error = "success")
+    .catch(e => this.error = "error");
   }
 
   pushSchedule(): void {
