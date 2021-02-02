@@ -10,6 +10,7 @@ import { ShiftService } from 'src/app/services/shift.service';
 import { UserService } from 'src/app/services/user.service';
 import * as moment from 'moment';
 import { ScheduleService } from 'src/app/services/schedule.service';
+import { Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'rev-new-shift',
@@ -18,9 +19,11 @@ import { ScheduleService } from 'src/app/services/schedule.service';
 })
 export class NewShiftComponent implements OnInit {
 
-  allShifts: Shift[] = [];
   @Input() schedule: Schedule;
   @Input() date: Date;
+  @Output() postCheck = new EventEmitter<string>();
+  // testSuccess: string = "success";
+  allShifts: Shift[] = [];
   schedules: Schedule[]
   positions: Position[];
   users: User[];
@@ -68,6 +71,7 @@ export class NewShiftComponent implements OnInit {
       this.currentDay = this.days[this.currentDayInt];
       this.startTime = moment(this.shift.shiftStartTime).format("HH:mm");
       this.endTime = moment(this.shift.shiftEndTime).format("HH:mm");
+      // this.postCheck.emit('1');
   }
 
   postShift() {
@@ -76,13 +80,16 @@ export class NewShiftComponent implements OnInit {
     this.shift.shiftStartTime = this.dateService.changeTime(this.date, this.startTime)
     this.shift.shiftEndTime = this.dateService.changeTime(this.date, this.endTime)
     this.shift.id = 0;
-    console.log("this is what is posting: ", this.shift)
     this.shiftService.postNewShift(this.shift)
     .then(res => {
       console.log(res);
+      this.postCheck.emit("success")
+      console.log(this.postCheck)
     })
     .catch(err => {
       this.errorMessage = err;
+      this.postCheck.emit("error");
+      console.log(this.postCheck)
     })
   }
 
@@ -93,8 +100,6 @@ export class NewShiftComponent implements OnInit {
     if (!user.availability[this.currentDay] || exists) {
       available = true;
     }
-
-    // console.log(available, user);
     return available;
   }
 }

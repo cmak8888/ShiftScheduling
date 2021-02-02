@@ -14,12 +14,16 @@ export class EmployeeGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    // let isEmployee = !this.authService.loggedInIsManager();
-    let isEmployee = this.authService.isLoggedIn();
-    if(!isEmployee) {
+    let isLoggedIn = this.authService.isLoggedIn();
+    let isEmployee = !this.authService.loggedInIsManager();
+    if(!isLoggedIn) {
       this.router.navigate(['login']);
-      return true;
+      return false;
     }
+    if(!isEmployee) {
+      this.router.navigate(['manager'])
+    }
+
     return isEmployee;
   }
 

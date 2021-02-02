@@ -19,11 +19,11 @@ export class ViewShiftComponent implements OnInit {
   }
 
   dateFormatter(date: Date) {
-    return moment.utc(date).format('hh:MM A');
+    return moment(date).format('hh:MM A');
   }
 
   dayFormatter(date: Date) {
-    return moment.utc(date).format('MMMM DD, YYYY')
+    return moment(date).format('MMMM DD, YYYY')
   }
 
 }
