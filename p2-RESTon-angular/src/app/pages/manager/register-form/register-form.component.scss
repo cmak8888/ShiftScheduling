@@ -1,0 +1,52 @@
+.form-container{
+    // width: 100vw;
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  form{
+    width: 90%;
+    max-width: 400px;
+  }
+
+  .box{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    // padding-top: 52px;
+  }
+
+  .example-full-width {
+    min-width: 200px;
+    max-width: 600px;
+    width: 100%;
+    
+  }
+
+  td {
+    padding-right: 0px;
+    width: 100%;
+  }
+
+  .example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 150%;
+  }
+
+  button{
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+
+  h1 {
+    color: green;
+    margin-bottom: 25px;
+    font-size: 170%;
+  }

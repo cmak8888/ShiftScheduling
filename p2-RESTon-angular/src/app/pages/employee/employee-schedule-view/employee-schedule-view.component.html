@@ -1,0 +1,2 @@
+<rev-schedule-calander [schedule]="currentSchedule" *ngIf="currentSchedule; else elseBlock"></rev-schedule-calander>
+<ng-template class="schedule-error" #elseBlock>No Current Schedules</ng-template>

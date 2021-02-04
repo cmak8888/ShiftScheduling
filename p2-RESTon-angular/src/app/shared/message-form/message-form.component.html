@@ -1,0 +1,12 @@
+<form (submit)="onSubmit($event)">
+    <div class="field">
+        <div class="control">
+        <label class="label">Message</label>
+        <div><strong class="error">{{error}}</strong></div>
+        <textarea [ngClass]="(error)?'input is-danger':'input'" class="textarea" placeholder="Message" [(ngModel)]="message.content" name="content" required></textarea>
+        </div>
+    </div>
+    <div class="control">
+        <button class="button is-link" type="submit" value = "Submit">Submit</button>
+    </div>
+</form>

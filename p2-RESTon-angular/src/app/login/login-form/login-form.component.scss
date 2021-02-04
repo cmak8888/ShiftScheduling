@@ -1,0 +1,22 @@
+form{
+  width: 90%;
+  max-width: 400px;
+}
+.form-container{
+  width: 100vw;
+  // height: 100vh;
+  // margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.box{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 25px;
+}

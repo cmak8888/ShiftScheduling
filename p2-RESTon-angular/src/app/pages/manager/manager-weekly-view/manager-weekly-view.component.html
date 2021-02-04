@@ -1,0 +1,7 @@
+<div *ngIf="this.error == 'success'" class="notification is-success is-light notification-style"><button class="delete" (click)="closeError()"></button>Successfully added a new Schedule! When you finish adding shifts, please "Push" the schedule.</div>
+<div *ngIf="this.error == 'error'" class="notification is-danger is-light notification-style"><button class="delete" (click)="closeError()"></button>Please "Push" the current schedule before attempting to create a new schedule!</div>
+<div class="manager-button-box">
+  <button class="button" (click)="postSchedule()">Post New Schedule</button>
+  <button class="button" (click)="pushSchedule()" [attr.disabled]="currentSchedule.active == false ? null : true" [ngClass]="{'is-loading': pushing}">Push Schedule</button>
+</div>
+<rev-weekly-schedule-calendar (scheduleChange)="getSchedule($event)"></rev-weekly-schedule-calendar>

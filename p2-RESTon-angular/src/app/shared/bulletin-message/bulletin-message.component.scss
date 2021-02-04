@@ -1,0 +1,30 @@
+$aesthetic-color: rgba(99, 90, 95, 1);
+
+.media {
+  border-top: 0.5px #999999;
+  border-bottom: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-style: solid;
+  width: 100%;
+  padding: 10px 0;
+}
+
+div .message-content {
+  text-align: center;
+  padding: 25px 0;
+}
+
+.content {
+  padding-top: 0.6em;
+}
+
+.username {
+  font-size: 1.1em;
+}
+
+.date-sent {
+  text-align: right;
+  font-size: 0.7em;
+  opacity: 0.5;
+}

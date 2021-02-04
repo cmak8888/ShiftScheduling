@@ -1,0 +1,7 @@
+      <!-- ----------------- START OF ROLE COMPONENT ----------------- -->
+      <tr>
+        <td>{{roleName}}</td>
+        <td>
+          <rev-shifts [shift]="s" *ngFor="let s of shifts"></rev-shifts>
+        </td>
+      </tr>

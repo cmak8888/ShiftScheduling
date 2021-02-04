@@ -1,0 +1,47 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'navigation' : 'dialog'"
+      [opened]="(isHandset$ | async) === true">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item routerLink="./" (click)="drawer.toggle()">Bulletin</a>
+      <mat-divider></mat-divider>
+      <a mat-list-item *ngIf="!user.isManager" [routerLink]="['/employee']" (click)="drawer.toggle()">Home</a>
+      <a mat-list-item *ngIf="user.isManager" [routerLink]="['/manager']" (click)="drawer.toggle()">Home</a>
+      <a mat-list-item *ngIf="user.isManager" [routerLink]="['register']" (click)="drawer.toggle()">Register</a>
+      <a mat-list-item routerLink="./weekly-view" (click)="drawer.toggle()">Schedule</a>
+      <a mat-list-item routerLink="./profile" (click)="drawer.toggle()">Profile</a>
+      <a mat-list-item routerLink="./chat" (click)="drawer.toggle()">DM's</a>
+
+      <button mat-raised-button (click) = "logout()" class = "button is-danger" id ="logout" [disabled] = "showSpinner">
+        <span>
+          <mat-spinner [diameter]="30" *ngIf = "showSpinner" class = "spinny"></mat-spinner>
+           <span *ngIf = "!showSpinner">Logout</span>
+        </span>
+      </button>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary" class="mat-elevation-z6">
+
+      <button
+
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        >
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span><img src = "https://www.brandbucket.com/sites/default/files/logo_uploads/192388/large_shift.ly.png" style="width: 150px; margin-top: 13px;"></span>
+      <span id = "profile-info" style="float:right">
+          <button mat-mini-fab color="warm" >
+            <a [routerLink]="['./profile']">
+              <mat-icon>perm_identity</mat-icon>
+            </a>
+          </button>
+      </span>
+    </mat-toolbar>
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,87 @@
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  text-align: center;
+}
+
+section {
+  width: 30%;
+  display: inline-block;
+  text-align: center;
+  min-height: 215px;
+  vertical-align: top;
+  margin: 1%;
+}
+
+@media only screen and (max-width: 600px) {
+  section {
+    min-width: 350px;
+  }
+}
+
+.loader-line {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin: 75px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/*LOADER-7*/
+.loader-7 .line {
+  width: 8px;
+  position: absolute;
+  border-radius: 5px;
+  bottom: 0;
+  /*         background: -webkit-gradient(linear, left top, left bottom, from(rgba(250, 90, 255, 1)), to(#5714ce));
+    background: -webkit-linear-gradient(top, #1ee95d, #5714ce); */
+  background: -webkit-gradient(linear, left top, left bottom, from(#fa5aff), color-stop(81%, #3f60ff), to(#5264ff));
+  background: linear-gradient(180deg, #fa5aff 0%, #3f60ff 81%, #5264ff 100%);
+}
+
+.loader-7 .line1 {
+  left: 0;
+  -webkit-animation: line-grow 0.5s ease alternate infinite;
+  animation: line-grow 0.5s ease alternate infinite;
+}
+
+.loader-7 .line2 {
+  left: 20px;
+  -webkit-animation: line-grow 0.5s 0.2s ease alternate infinite;
+  animation: line-grow 0.5s 0.2s ease alternate infinite;
+}
+
+.loader-7 .line3 {
+  left: 40px;
+  -webkit-animation: line-grow 0.5s 0.4s ease alternate infinite;
+  animation: line-grow 0.5s 0.4s ease alternate infinite;
+}
+
+/* ----------------     KEYFRAMES    ----------------- */
+@-webkit-keyframes line-grow {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 75%;
+  }
+}
+
+@keyframes line-grow {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 75%;
+  }
+}
+/*# sourceMappingURL=loader-two.component.css.map */

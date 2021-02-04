@@ -1,0 +1,13 @@
+<!-- ----------------- START OF SHIFT COMPONENTS ----------------- -->
+<td class="inner-table">
+    <tr>
+      <td *ngFor="let n of num" class="shift-grid">
+        <span class="shift" [ngStyle]="shiftObject" *ngIf="currentShiftStart.getHours() == n" (click)="viewModals(true)">{{shift.user.firstName}} {{shift.user.lastName}}</span>
+      </td>
+    </tr>
+</td>
+
+<rev-modal *ngIf="viewModal" (closeModal)="viewModals(false)" [ngSwitch]="currentUser">
+  <rev-edit-shift [allShifts]="allShifts" [shift]="shift" *ngSwitchCase="'manager'" [currentSchedule]="currentSchedule"></rev-edit-shift>
+  <rev-view-shift [shift]="shift" *ngSwitchCase="'employee'"></rev-view-shift>
+</rev-modal>

@@ -1,0 +1,27 @@
+<div class="schedule-wrapper">
+  <ng-container *ngIf="currentSchedule; else elseBlock">
+    <div class="center">
+      <div class="nav-btn-container">
+        <button class="button nav-btn"(click)='changeSchedule(-1)'>Previous</button>
+        <button class="button nav-btn"(click)='changeSchedule(1)'>Next</button>
+      </div>
+    </div>
+    <div class="calendar-container">
+      <tr id="outter-table">
+        <th></th>
+        <th><a class="week-button" [routerLink]="'../view-day'" [queryParams]="{day: 0, scheduleId: currentSchedule.id}">Sunday</a><p>{{dateFormatter(currentSchedule.startDate)}}</p></th>
+        <th><a class="week-button" [routerLink]="'../view-day'" [queryParams]="{day: 1, scheduleId: currentSchedule.id}">Monday</a><p>{{dateFormatter(currentSchedule.startDate, 1)}}</p></th>
+        <th><a class="week-button" [routerLink]="'../view-day'" [queryParams]="{day: 2, scheduleId: currentSchedule.id}">Tuesday</a><p>{{dateFormatter(currentSchedule.startDate, 2)}}</p></th>
+        <th><a class="week-button" [routerLink]="'../view-day'" [queryParams]="{day: 3, scheduleId: currentSchedule.id}">Wednesday</a><p>{{dateFormatter(currentSchedule.startDate, 3)}}</p></th>
+        <th><a class="week-button" [routerLink]="'../view-day'" [queryParams]="{day: 4, scheduleId: currentSchedule.id}">Thursday</a><p>{{dateFormatter(currentSchedule.startDate, 4)}}</p></th>
+        <th><a class="week-button" [routerLink]="'../view-day'" [queryParams]="{day: 5, scheduleId: currentSchedule.id}">Friday</a><p>{{dateFormatter(currentSchedule.startDate, 5)}}</p></th>
+        <th><a class="week-button" [routerLink]="'../view-day'" [queryParams]="{day: 6, scheduleId: currentSchedule.id}">Saturday</a><p>{{dateFormatter(currentSchedule.startDate, 6)}}</p></th>
+      </tr>
+        <hr>
+        <rev-weekly-enrolls [schedule]="currentSchedule"></rev-weekly-enrolls>
+      </div>
+  </ng-container>
+
+  <!-- NEED TO CHANGE -->
+  <ng-template class="no-sched-error" #elseBlock>No Current Schedules</ng-template>
+</div>

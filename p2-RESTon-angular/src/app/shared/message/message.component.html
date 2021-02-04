@@ -1,0 +1,8 @@
+<div class="media" [ngClass]="{ 'mine': isMine() }">
+  <div class="message">
+    <p>
+      <strong>{{getName()}}</strong> @ <small>{{formatDate(message.time)}}</small>
+    </p>
+    {{message.content}}
+  </div>
+</div>

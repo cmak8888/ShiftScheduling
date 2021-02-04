@@ -1,0 +1,14 @@
+.message-container {
+    overflow: auto;
+}
+
+
+
+.chat {
+  border: solid 1px #EEE;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  max-width: 1000px;
+  margin: 0 auto;
+}

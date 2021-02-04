@@ -1,0 +1,18 @@
+.media {
+  display: flex;
+  width: 100%;
+  padding: 10px 50px;
+}
+.mine {
+  justify-content: flex-end;
+}
+
+.message {
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+
+.mine .message {
+  align-items: flex-end;
+}

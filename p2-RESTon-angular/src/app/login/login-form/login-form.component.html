@@ -1,0 +1,32 @@
+<div class="form-container">
+  <img src="https://www.brandbucket.com/sites/default/files/logo_uploads/192388/large_shift.ly.png" alt="">
+
+  <form (submit) = "onSubmit($event)">
+      <div class = "box">
+          <div *ngIf = "error" class="help is-danger"> {{ error }}</div>
+        <mat-form-field appearance="standard">
+              <mat-label>Email</mat-label>
+                  <input matInput [ngClass]="(error)?'is-danger':''" [(ngModel)]="user.email" type="email" placeholder="Email" name = "email">
+                  <button mat-icon-button matSuffix [disabled] = 'true'>
+                    <mat-icon>verified</mat-icon>
+                    </button>
+        </mat-form-field>
+
+        <mat-form-field appearance="standard">
+              
+              <mat-label>Password</mat-label>
+                  <input matInput [(ngModel)]="user.password"  type="password" placeholder="password" name = "password" [type]="hide ? 'password' : 'text'"> 
+                  <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide" type="button" >
+                      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  </button>
+        </mat-form-field>
+
+          <div class="field is-grouped">
+              <div class="control">
+                <button mat-flat-button color="accent" type = "submit" value = "Submit">Submit</button>
+              </div>
+          </div>
+      </div>
+  </form>
+</div>
+

@@ -1,0 +1,17 @@
+<div class="card">
+  <div class="card-content">
+    <h2 class="title is-3">Shift Details</h2>
+    <div class="media">
+      <div class="media-content">
+        <p class="title is-4">Name: {{shift.user.firstName}} {{shift.user.lastName}}</p>
+        <p class="subtitle is-5">Email: {{shift.user.email}}</p>
+      </div>
+    </div>
+
+    <div class="content">
+      <p class="title is-4">Role: {{shift.position.name}}</p>
+      <p class="title is-5">{{dayFormatter(shift.shiftStartTime)}}</p>
+      <p class="subtitle is-6">{{dateFormatter(shift.shiftStartTime)}} to {{dateFormatter(shift.shiftEndTime)}}</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+  <div *ngIf="this.postSuccess == 'success'" class="notification is-success is-light notification-style"><button class="delete" (click)="closePostSuccess()"></button>Successfully posted the new Shift!</div>
+  <div *ngIf="this.postSuccess == 'error'" class="notification is-danger is-light notification-style"><button class="delete" (click)="closePostSuccess()"></button>Something went wrong! Please try again.</div>
+  <button class="button post-button" (click)="viewModals('a')">Post a new shift</button>
+  <rev-schedule-calander [schedule]="currentSchedule" *ngIf="currentSchedule"></rev-schedule-calander>
+
+  <rev-modal *ngIf="viewModal" (closeModal)="viewModals('')" [ngSwitch]="viewModal">
+    <rev-new-shift (postCheck)="receiveNotification($event)" *ngSwitchCase="'a'" [date]="date" [schedule]="currentSchedule"></rev-new-shift>
+  </rev-modal>
+

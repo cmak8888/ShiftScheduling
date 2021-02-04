@@ -1,0 +1,54 @@
+.schedule-wrapper {
+  width: 90%;
+  min-width: 1200px;
+  margin: 0 auto;
+  overflow: auto;
+}
+// tr {
+//   padding: 15px 0;
+// }
+td,
+th {
+  min-width: 12em;
+  height: 2em;
+}
+
+#outter-table th {
+  text-align: left;
+}
+
+.inner-table tr td {
+  position: relative;
+  height: 2em;
+}
+
+.shift {
+  position: absolute;
+  height: 10em;
+  border-style: solid;
+  border-radius: 5px;
+  top: 0;
+
+  // flex
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.center {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-bottom: 2em;
+}
+
+.week-button {
+  text-decoration: underline;
+  text-underline-position: below;
+  text-align: center;
+}
+
+.nav-btn-container {
+  display: flex;
+  justify-content: flex-end;
+}

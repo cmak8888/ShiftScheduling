@@ -1,0 +1,24 @@
+$default-color: rgba(0, 0, 0, 1);
+
+.bulletin {
+  padding: 100px 0;
+  width: 98vw;
+  max-width: 1500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h1 {
+  text-align: center;
+}
+.bulletin-window {
+  background: #ffffff;
+  margin-top: 20px;
+  max-height: 60vh;
+  width: 100%;
+  overflow-x: auto;
+  padding: 50px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}

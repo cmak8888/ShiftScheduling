@@ -1,0 +1,39 @@
+.grid-container {
+  margin: 20px;
+  
+}
+
+.dashboard-card {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+}
+
+.dashboard-card-content {
+  text-align: center;
+  
+}
+
+.mat-card {
+  box-shadow: 2px 3px 10px 5px rgba(129, 129, 129, 0.75);
+  transform: scale(1);
+  
+}
+
+.mat-card:hover {
+  box-shadow: 1px 1px 7px 7px rgba(129, 129, 129, 0.75);
+  transform: scale(1);
+}
+
+.form-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.tile-one{
+  overflow-y: auto;
+}

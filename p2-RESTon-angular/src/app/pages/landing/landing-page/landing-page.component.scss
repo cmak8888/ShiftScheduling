@@ -1,0 +1,51 @@
+header {
+  height: 700px;
+  background: url('/../assets/images/header-image.jpg') center center no-repeat;
+  background-size: cover;
+}
+header .content{
+  text-align: center;
+  width: 50%;
+}
+.section {
+  padding: 150px 0;
+  display: flex;
+  border-bottom: 1px solid #000;
+}
+.section.column {
+  flex-direction: column;
+}
+.section.center {
+  justify-content: center;
+  align-items: center;
+}
+.jcr {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.card {
+  text-align: center;
+  margin: 50px;
+  padding: 50px 20px;
+  max-width: 400px;
+  height: 350px;
+}
+.card img {
+  width: 75px;
+}
+
+img.screenshots {
+  width: unset;
+  max-height: 400px;
+}
+
+.cta-logo{
+  width: 100% !important;
+}
+
+.footer {
+  background: #232528;
+  color: #ffffff;
+}

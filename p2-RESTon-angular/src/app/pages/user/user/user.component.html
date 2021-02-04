@@ -1,0 +1,49 @@
+
+
+<form class="example-form" [formGroup] = "myForm" >
+
+    <div class = "block">
+        <img class = "profile-pic" src = "https://media.giphy.com/media/LW5vBvAb48Oe9OoEKT/giphy.gif" />
+    </div>
+
+    <mat-form-field class="example-full-width">
+        <mat-label>ID</mat-label>
+        <input matInput disabled value={{user.id}}>
+      </mat-form-field>
+
+      <table class="example-full-width" cellspacing="0"><tr>
+        <td><mat-form-field class="example-full-width" >
+          <mat-label>First Name</mat-label>
+          <input matInput formControlName = "firstName" required>
+          <mat-error *ngIf="firstName.errors?.required && firstName.touched">{{getGeneralError()}}</mat-error>
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>Last Name</mat-label>
+          <input matInput formControlName = "lastName" required>
+          <mat-error *ngIf="lastName.errors?.required && lastName.touched">{{getGeneralError()}}</mat-error>
+        </mat-form-field></td>
+      </tr></table> 
+    
+    <mat-form-field class="example-full-width">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="pat@example.com" [formControl]="email" required >
+        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+    
+    <mat-form-field class="example-full-width">
+        <mat-label>Telephone</mat-label>
+        <span matPrefix>+1 &nbsp;</span>
+        <input type="tel" matInput formControlName = "phone" placeholder="555-555-1234" value = {{user.phone}} required>
+        <mat-error *ngIf="phone.errors?.required && phone.touched">{{getGeneralError()}}</mat-error>
+        <mat-error *ngIf="phone.errors?.minlength && phone.touched">Too Short!</mat-error>
+        <mat-error *ngIf="phone.errors?.maxlength && phone.touched">Too Long!</mat-error>
+        <mat-icon matSuffix>mode_edit</mat-icon>
+    </mat-form-field>
+
+    <div>
+        <button mat-raised-button type = "submit" [disabled] = "myForm.invalid" color="accent" (click) = "onSubmit(myForm)">Update Profile</button>
+    </div>
+
+
+</form>
+

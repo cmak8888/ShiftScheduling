@@ -1,0 +1,29 @@
+<div class = "grid-container">
+
+
+
+
+
+    <div class="left">
+      <ul class="user-list">
+          <li class="list-item" *ngFor="let user of users" (click)="setUser(user)">{{user.firstName}} {{user.lastName}} {{checkUser(user)}}</li>
+      </ul>
+    </div>
+
+
+
+    <div class="right">
+      <div class="chat-window">
+        <div class="chatroom-header" *ngIf="receiver">To: {{receiver.firstName}} {{receiver.lastName}}</div>
+        <div class="chat-content">
+          <rev-messaging [user]="receiver" *ngIf="receiver"></rev-messaging>
+        </div>
+        <div>
+          <rev-message-form [receiver]="receiver" *ngIf="receiver"></rev-message-form>
+        </div>
+      </div>
+    </div>
+
+
+
+</div>

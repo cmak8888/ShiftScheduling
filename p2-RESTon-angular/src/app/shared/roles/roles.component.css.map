@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,EAAE;AACF,EAAE,CAAC;EACD,SAAS,EAAE,KAAK;EAChB,MAAM,EAAE,IAAI;CACb;;AAED,AAAA,aAAa,CAAC,EAAE,CAAC;EACf,UAAU,EAAE,IAAI;CACjB",
+    "sources": [
+        "roles.component.scss"
+    ],
+    "names": [],
+    "file": "roles.component.css"
+}

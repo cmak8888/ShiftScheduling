@@ -1,0 +1,19 @@
+
+<div class = "grid-container">
+  <mat-grid-list [cols]="isMobile ? 10 : 20">
+
+    <mat-grid-tile [colspan]="isMobile ? 10 : 11" [rowspan]="isMobile ? 10 : 10">
+      <mat-card class="dashboard-card tile-one">
+        <rev-availability></rev-availability>
+      </mat-card>
+    </mat-grid-tile>
+
+
+    <mat-grid-tile [colspan]="isMobile ? 10 : 9" [rowspan]="isMobile ? 10 : 10">
+      <mat-card class="dashboard-card tile-one" >
+          <rev-user class = "form-area"></rev-user>
+      </mat-card>
+    </mat-grid-tile>
+
+  </mat-grid-list>
+</div>

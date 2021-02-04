@@ -1,0 +1,8 @@
+<div class="bg">
+  <div class="bulletin">
+    <h1 class="title is-h1">Bulletin Board</h1>
+    <div class="bulletin-window" #bulletinWindow>
+      <rev-bulletin-message *ngFor="let message of myMessages" [message]="message"></rev-bulletin-message>
+    </div>
+  </div>
+</div>

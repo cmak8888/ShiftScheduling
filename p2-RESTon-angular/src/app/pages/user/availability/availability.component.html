@@ -1,0 +1,32 @@
+<img src = "https://blog-assets.freshworks.com/freshdesk/wp-content/uploads/2020/03/05162316/Shift-schedules.jpg"/>
+<table >
+  <div class = "demo">
+    <span *ngFor = "let day of days" class = "each-day">
+    <mat-card>
+      <!-- <mat-label>{{day | titlecase}}</mat-label> -->
+      <mat-label *ngIf="user.availability[day] == true" style="border-bottom: 5px solid green;; padding-bottom: 2px;">{{day | titlecase}}</mat-label>
+      <mat-label *ngIf="user.availability[day] == false" style="border-bottom: 5px solid red; padding-bottom: 2px;">{{day | titlecase}}</mat-label>
+
+        <mat-form-field appearance="fill">
+          <mat-label>{{day | uppercase}}</mat-label>
+          <mat-select [(value)]="user.availability[day]" (click) = select()>
+            <mat-option [value]="true">
+              I'm available!
+            </mat-option>
+            <mat-option [value]="false">
+              I'm busy!
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        
+      </mat-card>
+    </span>
+    <div class = "submit-button">
+      <button mat-raised-button color="accent" type = "submit" (click) = onSubmit()>Submit</button>
+    </div>
+  </div>
+</table>
+
+
+
+
